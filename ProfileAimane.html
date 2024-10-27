@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mon profil</title>
+    <STYle>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #0a7241;
+        }
+        /* Style pour le conteneur principal */
+        
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* En-tête */
+        
+        header {
+            background-color: red;
+            color: blue;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #311616;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        /* Sections */
+        
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #34df89;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        section h2 {
+            margin-top: 0;
+            border-bottom: 2px solid rgb(15, 136, 51);
+            padding-bottom: 10px;
+        }
+        /* Texte */
+        
+        p {
+            line-height: 1.6;
+        }
+        /* Bordures et arrière-plans pour les sections */
+        
+        .section-primary {
+            background-color: #e9f7ef;
+            border: 1px solid #b6e0cd;
+        }
+        
+        .section-secondary {
+            background-color: #e3f2fd;
+            border: 1px solid #1d1f20;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            header {
+                padding: 15px;
+            }
+            section {
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+            section h2 {
+                font-size: 1em;
+            }
+        }
+    </STYle>
+    <center>
+        <h1>Hnid Aimane</h1>
+    </center>
+
+    <section>
+
+        <center><img src="C:\Users\hp1\OneDrive - Ecole Marocaine des Sciences de l'Ingénieur\Images\Captures d’écran\Capture d'écran 2024-10-27 121442.png" width="100" height="100"></center>
+        <p>
+            <H2>
+                <center>A propos de moi</center>
+            </H2>
+        </p>
+        <center>
+            <p>Aimane Hnid, 20 ans, j'habite à casablanca et je suis un etudiant à l'EMSI</p>
+        </center>
+
+    </section>
+    <section>
+        <table>
+            <H2>mes amis</H2>
+            <style>
+                table {
+                    font-family: arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+                
+                td,
+                th {
+                    border: 4px solid #0d5224;
+                    text-align: left;
+                    padding: 8px;
+                }
+                
+                tr:nth-child(even) {
+                    background-color: #ffffff;
+                }
+            </style>
+
+            <tr>
+                <th>NOM</th>
+                <th>Age</th>
+                <th>Ville</th>
+                <th>Date de naissance</th>
+            </tr>
+            <tr>
+                <td>Azzat nouamane</td>
+                <td>20</td>
+                <td>Casablanca</td>
+                <td>2004</td>
+            </tr>
+            <tr>
+                <td>bouras aymane</td>
+                <td>25</td>
+                <td>Casablanca</td>
+                <td>1999</td>
+            </tr>
+            <tr>
+                <td>samoudi Hamza</td>
+                <td>43</td>
+                <td>casablanca</td>
+                <td>1981</td>
+            </tr>
+
+            <br>
+        </table>
+        <br>
+        <H2>passe-temps et visées</H2>
+        <UL>
+            <li><b>passe-temps:</b></li>
+            <li>Pratiquer un sport</li>
+            <li> Conduire une voiture</li>
+        </UL>
+        <ul>
+            <li><b>Visées:</b></li>
+            Devenir riche
+        </ul>
+    </section>
+
+    <body>
+
+        <center>
+            <h2>Pour nous contacter</h2>
+            <form id="contactForm">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="button" onclick="validateForm()">Envoyer</button>
+            </form>
+        </center>
+
+</head>
+<script>
+    function validateForm() {
+        // Obtenez les valeurs des champs
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Vérification des erreurs
+        if (name === '') {
+            alert('Veuillez entrer votre nom.');
+            return;
+        }
+        if (!validateEmail(email)) {
+            alert('Veuillez entrer une adresse e-mail valide.');
+            return;
+        }
+        if (message === '') {
+            alert('Veuillez entrer un message.');
+            return;
+        }
+
+        // Si tout est correct
+        alert('Formulaire soumis avec succès !');
+    }
+
+    // Fonction de validation de l'email
+    function validateEmail(email) {
+        const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return re.test(email);
+    }
+</script>
+</body>
+
+</html>
